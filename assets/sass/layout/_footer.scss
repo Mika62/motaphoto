@@ -1,0 +1,25 @@
+.footer {
+    border-top: 1px solid #000;
+
+    &__menu {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+    }
+
+    &__link,
+    &__text {
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .footer__menu {
+        height: unset;
+        padding: 40px 0;
+        flex-direction: column;
+        gap: 40px;
+    }
+}

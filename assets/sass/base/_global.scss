@@ -1,0 +1,25 @@
+body {
+    font-family: 'Space Mono', monospace;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+}
