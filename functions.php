@@ -8,6 +8,7 @@ require THEME_ROOT . 'classes/walkers/class-walker-copyright-menu.php';
 add_action('wp_enqueue_scripts', 'theme_enqueues');
 add_action('after_setup_theme', 'theme_supports');
 add_filter('get_custom_logo', 'change_logo_classes');
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 /**
  * Add Styles, Scripts and Fonts.

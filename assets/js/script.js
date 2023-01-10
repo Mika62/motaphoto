@@ -23,4 +23,31 @@ jQuery(document).ready(function () {
         }
     })
 
+/*------------------------------------
+    Modal
+------------------------------------*/
+    // Open
+    jQuery('a[href="#modal"]').click(function () {
+        jQuery('body').addClass('stop-scroll')
+        jQuery('#modal').addClass('show').attr('aria-hidden', false)
+
+        // Entries
+        if (this.dataset.entries) {
+            const entries = JSON.parse(this.dataset.entries)
+
+            for (const key in entries) {
+                jQuery(`input[name="${key}"]`).val(entries[key])
+            }
+        }
+    })
+
+    // Close
+    jQuery('html').click(function (e) {
+        if (e.target.id === 'modal') {
+            location.hash = ''
+            jQuery('body').removeClass('stop-scroll')
+            jQuery('#modal').removeClass('show').attr('aria-hidden', true)
+        }
+    })
+
 })

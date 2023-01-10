@@ -23,3 +23,16 @@ a:hover {
 img {
     max-width: 100%;
 }
+
+input,
+label {
+    font-family: 'Poppins', sans-serif;
+}
+
+select,
+textarea,
+input {
+    border-radius: 0;
+    width: 100%;
+    border: 1px solid #000;
+}

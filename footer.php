@@ -1,5 +1,8 @@
     </main>
     <!-- /Main -->
+
+    <!-- Modal -->
+    <?php get_template_part('parts/contact-modal') ?>
     
     <!-- Footer -->
     <footer id="footer" class="footer">

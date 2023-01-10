@@ -1,0 +1,28 @@
+.btn {
+    transition: .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($secondary-color, 3);
+        box-shadow: unset;
+        text-decoration: none;
+    }
+}
+
+.btn-flag {
+    position: relative;
+    border: unset;
+    background-color: #fff;
+    padding: 0 45px;
+    line-height: 38px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 19px);
+        left: -2px;
+        width: 4px;
+        height: 100%;
+        background-color: #000;
+    }
+}

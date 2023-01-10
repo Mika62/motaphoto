@@ -30,6 +30,19 @@ img {
   max-width: 100%;
 }
 
+input,
+label {
+  font-family: "Poppins", sans-serif;
+}
+
+select,
+textarea,
+input {
+  border-radius: 0;
+  width: 100%;
+  border: 1px solid #000;
+}
+
 .stop-scroll {
   height: 100%;
   overflow: hidden;
@@ -146,6 +159,58 @@ img {
     gap: 40px;
   }
 }
+.form__group, .form--flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.form__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.form__input {
+  height: 40px;
+  padding: 0 10px;
+}
+.form__textarea {
+  padding: 10px;
+}
+.form__select {
+  min-width: 272px;
+  height: 49px;
+  padding: 0 10px;
+}
+
+.btn {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #d0d0d0;
+  box-shadow: unset;
+  text-decoration: none;
+}
+
+.btn-flag {
+  position: relative;
+  border: unset;
+  background-color: #fff;
+  padding: 0 45px;
+  line-height: 38px;
+}
+.btn-flag::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 19px);
+  left: -2px;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+
 .icon {
   display: inline-block;
   background-repeat: no-repeat;
@@ -161,6 +226,73 @@ img {
 
 .icon-menu-close {
   background-image: url("../icons/menu-close.svg");
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  padding: 60px 20px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 999;
+  transition: opacity 0.4s ease-in;
+}
+.modal__title {
+  margin-top: 5px;
+}
+.modal__content {
+  background-color: #fff;
+  border: 3px solid #000;
+  margin: auto;
+  width: 454px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.modal__content::-webkit-scrollbar {
+  display: none;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 90px;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.modal__btn {
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .modal__form {
+    padding: 30px;
+    margin-bottom: 0;
+  }
+  .modal__btn {
+    margin: 0;
+  }
+}
+.wpcf7-submit {
+  border: unset;
+  background-color: #fff;
+  padding: 0 45px;
+  line-height: 38px;
+  border-left: 4px solid #000;
+}
+
+.wpcf7 form .wpcf7-response-output {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

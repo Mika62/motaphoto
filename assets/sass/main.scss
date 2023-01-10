@@ -25,6 +25,7 @@
 @import "components/heading";
 @import "components/icons";
 @import "components/loader";
+@import "components/modal";
 
 // Pages
 @import "pages/home";
@@ -38,4 +39,5 @@
 
 // Vendors
 @import "vendors/bootstrap";
+@import "vendors/cf7";
 @import "vendors/jquery";
