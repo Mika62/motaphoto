@@ -65,4 +65,27 @@ jQuery(document).ready(function () {
         })
     })
 
+/*------------------------------------
+    Lightbox
+------------------------------------*/
+    // Open
+    jQuery('.js-preview-btn').click(function () {
+        jQuery('#lightbox').addClass('show').attr('aria-hidden', false)
+
+        const img = jQuery('<img>', { id: 'lightbox-img', src: this.dataset.img })
+        jQuery('#lightbox-content').prepend(img)
+
+        setTimeout(() => {
+            jQuery('#lightbox-loader').hide()
+            jQuery('#lightbox-img').show()
+        }, 1000)
+    })
+
+    // Close
+    jQuery('#lightbox-close-btn').click(function () {
+        jQuery('#lightbox').removeClass('show').attr('aria-hidden', false)
+        jQuery('#lightbox-content').text('')
+        jQuery('#lightbox-loader').show()
+    })
+
 })

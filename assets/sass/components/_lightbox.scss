@@ -1,0 +1,50 @@
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+        transition: opacity .4s ease-in;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        transition: opacity .2s ease-in-out;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    &__content {
+        margin: auto;
+
+        img {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+
+    &__loader {
+        position: absolute;
+        top: calc(50% - 24px);
+        left: calc(50% - 24px);
+    }
+}

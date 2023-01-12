@@ -451,6 +451,90 @@ input {
   background-image: url("../icons/right-arrow.svg");
 }
 
+.icon-eye {
+  background-image: url("../icons/eye.svg");
+  width: 46px;
+  height: 46px;
+}
+
+.icon-x-close {
+  background-image: url("../icons/x-close.svg");
+  width: 22px;
+  height: 22px;
+}
+
+.icon-full-screen {
+  background-image: url("../icons/full-screen.svg");
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+.lightbox.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 999;
+  transition: opacity 0.4s ease-in;
+}
+.lightbox__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+.lightbox__close-btn:hover {
+  opacity: 0.7;
+}
+.lightbox__content {
+  margin: auto;
+}
+.lightbox__content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: none;
+}
+.lightbox__content img.show {
+  display: block;
+}
+.lightbox__loader {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+}
+
+.loader-rotary {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent !important;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation-360 1s linear infinite;
+}
+
+.loader-rotary--xl {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+}
+
+@keyframes rotation-360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .modal {
   position: fixed;
   inset: 0;

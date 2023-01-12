@@ -107,6 +107,9 @@ while (have_posts()):
     <div class="carousel__action">
         <a href="<?= get_home_url() ?>" class="btn btn-flag">Toutes les photos</a>
     </div>
+
+    <!-- Lightbox -->
+    <?php get_template_part('parts/lightbox') ?>
 </section>
 
 <?php
