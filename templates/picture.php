@@ -30,7 +30,7 @@ while (have_posts()):
     <div class="heading__container">
         <!-- Column -->
         <div class="heading__column">
-            <h1 class="heading__title">Bride's <br>Maid</h1>
+            <h1 class="heading__title"><?= get_the_title() ?></h1>
             <ul class="heading__info">
                 <li>Référence : <?= get_field('reference') ?></li>
                 <li>Catégorie : <?= get_esc_field('categories') ?></li>
@@ -77,6 +77,35 @@ while (have_posts()):
                 </a>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Carousel -->
+<section id="carousel" class="carousel">
+    <?php
+    
+    // Get suggestions
+    $suggestions = array_filter($posts, function ($v) use ($post, $prev, $next) {
+        if (!in_array($v->ID, [$post->ID, $prev->ID, $next->ID])) {
+            return get_field('categories') === get_field('categories', $v);
+        }
+    });
+    
+    if (!empty($suggestions)): ?>
+        <h2 class="carousel__title">Vous aimerez aussi</h2>
+
+        <!-- Container -->
+        <div id="carousel-container" class="carousel__container">
+            <?php get_template_part('parts/carousel-items', null, [
+                'items' => array_slice($suggestions, 0, 2),
+                'item_title' => 'h3',
+            ]) ?>
+        </div>
+    <?php endif ?>
+
+    <!-- Action -->
+    <div class="carousel__action">
+        <a href="<?= get_home_url() ?>" class="btn btn-flag">Toutes les photos</a>
     </div>
 </section>
 

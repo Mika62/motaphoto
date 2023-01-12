@@ -196,6 +196,7 @@ input {
 
 .btn-flag {
   position: relative;
+  display: inline-block;
   border: unset;
   background-color: #fff;
   padding: 0 45px;
@@ -211,6 +212,114 @@ input {
   background-color: #000;
 }
 
+.carousel__form {
+  margin-bottom: 50px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel__form::-webkit-scrollbar {
+  display: none;
+}
+.carousel__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.carousel__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+.carousel__item {
+  position: relative;
+  height: 525px;
+}
+.carousel__preview-btn {
+  position: absolute;
+  display: none;
+  z-index: 2;
+  top: 15px;
+  right: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+.carousel__preview-btn:hover {
+  transform: scale(1.15);
+}
+.carousel__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel__caption {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.92) 100%);
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  padding: 15px 20px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.carousel__caption .icon {
+  position: absolute;
+  top: calc(50% - 23px);
+  left: calc(50% - 23px);
+}
+.carousel__item:hover .carousel__preview-btn {
+  display: inline-block;
+}
+.carousel__item:hover .carousel__caption {
+  display: flex;
+}
+.carousel__item-title, .carousel__item-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.carousel__item-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.carousel__action {
+  text-align: center;
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .carousel__item {
+    height: 425px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .carousel__item {
+    height: 350px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .carousel__form {
+    margin-bottom: 40px;
+  }
+  .carousel__item {
+    height: 300px;
+  }
+  .carousel__action {
+    margin: 25px 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .carousel__container {
+    grid-template-columns: 1fr;
+  }
+  .carousel__item {
+    height: 250px;
+  }
+}
 .cta {
   display: flex;
   align-items: center;
@@ -227,6 +336,7 @@ input {
   line-height: 58px;
   font-style: italic;
   text-transform: uppercase;
+  max-width: 300px;
 }
 .heading__container {
   display: grid;
