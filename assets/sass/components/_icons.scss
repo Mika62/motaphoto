@@ -14,3 +14,17 @@
 .icon-menu-close {
     background-image: url('../icons/menu-close.svg');
 }
+
+.icon-left-arrow,
+.icon-right-arrow {
+    width: 30px;
+    height: 10px;
+}
+
+.icon-left-arrow {
+    background-image: url('../icons/left-arrow.svg');
+}
+
+.icon-right-arrow {
+    background-image: url('../icons/right-arrow.svg');
+}

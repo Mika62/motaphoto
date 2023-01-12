@@ -1,0 +1,110 @@
+.heading {
+    &__title {
+        font-size: 66px;
+        line-height: 58px;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &:first-of-type {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+    
+            &::after {
+                content: "";
+                border-bottom: 1px solid #000;
+            }
+        }
+    }
+
+    &__info {
+        margin: 40px 0;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: .1em;
+    }
+
+    &__img {
+        height: 845px;
+        object-fit: cover;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 110px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            bottom: 0;
+            border-bottom: 1px solid #000;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .heading__img {
+        height: 397px;
+    }
+}
+
+@media screen and (max-width: $mobile-width) {
+    .heading {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    
+        &__column:first-of-type {
+            order: 1;
+
+            &::after {
+                transform: translateX(-40px);
+                width: calc(100% + 80px);
+            }
+        }
+
+        &__img {
+            margin-bottom: 20px;
+        }
+
+        &__preview {
+            display: none !important;
+        }
+
+        &__footer::after {
+            transform: translateX(-40px);
+            width: calc(100% + 80px);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .heading {
+        &__cta {
+            flex-direction: column;
+            align-items: flex-start;
+            grid-gap: 25px;
+        }
+
+        &__footer {
+            height: 135px;
+        }
+    }
+}

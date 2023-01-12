@@ -1,0 +1,11 @@
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+    &__title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+    }
+}

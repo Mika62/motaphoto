@@ -2,11 +2,13 @@
 
 define('THEME_ROOT', get_theme_root() . '/motaphoto/');
 
+require THEME_ROOT . 'helpers.php';
 require THEME_ROOT . 'classes/walkers/class-walker-button-menu.php';
 require THEME_ROOT . 'classes/walkers/class-walker-copyright-menu.php';
 
 add_action('wp_enqueue_scripts', 'theme_enqueues');
 add_action('after_setup_theme', 'theme_supports');
+add_action('save_post', 'add_taxonomies_field_meta');
 add_filter('get_custom_logo', 'change_logo_classes');
 add_filter('wpcf7_autop_or_not', '__return_false');
 
@@ -48,4 +50,18 @@ function change_logo_classes($html) {
     $html = str_replace('custom-logo', 'logo', $html);
 
     return $html;
+}
+
+/**
+ * Add a meta field to facilitate
+ * sorting with taxonomies.
+ */
+function add_taxonomies_field_meta($id) {
+    $post = get_post($id);
+    $taxonomies = get_object_taxonomies($post);
+
+    foreach ($taxonomies as $taxonomy) {
+        $terms = get_the_terms($id, $taxonomy);
+        add_post_meta($id, $taxonomy,  $terms[0]->name, true);
+    }
 }

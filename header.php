@@ -10,7 +10,7 @@
 </head>
 <body id="body" class="body">
     <!-- Header -->
-    <header id="header" class="header <?= is_front_page() ? 'header' : 'header header--margin' ?>">
+    <header id="header" class="<?= is_front_page() ? 'header' : 'header header--margin' ?>">
         <!-- Container -->
         <div class="header__container container">
             <!-- Logo -->
@@ -39,5 +39,5 @@
     <!-- /Header -->
 
     <!-- Main -->
-    <main id="main" class="main">
+    <main id="main" class="<?= is_front_page() ? 'main' : 'main container' ?>">
         

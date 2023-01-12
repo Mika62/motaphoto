@@ -50,4 +50,19 @@ jQuery(document).ready(function () {
         }
     })
 
+/*------------------------------------
+    Preview
+------------------------------------*/
+    jQuery.each(['prev', 'next'], function (key, value) {
+        // Show
+        jQuery(`#preview-${value}-btn`).mouseover(function () {
+            jQuery(`#preview-${value}-img`).show()
+        })
+
+        // Hide
+        jQuery(`#preview-${value}-btn`).mouseout(function () {
+            jQuery(`#preview-${value}-img`).hide()
+        })
+    })
+
 })
