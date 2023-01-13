@@ -2,7 +2,9 @@
 
 define('THEME_ROOT', get_theme_root() . '/motaphoto/');
 
-require THEME_ROOT . 'helpers.php';
+require THEME_ROOT . 'utils/helpers.php';
+require THEME_ROOT . 'utils/queries.php';
+require THEME_ROOT . 'utils/ajax.php';
 require THEME_ROOT . 'classes/walkers/class-walker-button-menu.php';
 require THEME_ROOT . 'classes/walkers/class-walker-copyright-menu.php';
 

@@ -32,7 +32,7 @@ while (have_posts()):
         <div class="heading__column">
             <h1 class="heading__title"><?= get_the_title() ?></h1>
             <ul class="heading__info">
-                <li>Référence : <?= get_field('reference') ?></li>
+                <li>Référence : <?= get_esc_field('reference') ?></li>
                 <li>Catégorie : <?= get_esc_field('categories') ?></li>
                 <li>Format : <?= get_esc_field('formats') ?></li>
                 <li>Type : <?= get_esc_field('type') ?></li>

@@ -1,6 +1,6 @@
 .carousel {
     &__form {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         overflow-x: scroll;
         -ms-overflow-style: none;  // IE and Edge
         scrollbar-width: none;  // Firefox
@@ -110,10 +110,6 @@
 
 @media screen and (max-width: $mobile-width) {
     .carousel {
-        &__form {
-            margin-bottom: 40px;
-        }
-
         &__item {
             height: 300px;
         }

@@ -185,6 +185,7 @@ input {
 }
 
 .btn {
+  display: inline-block;
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -193,10 +194,24 @@ input {
   box-shadow: unset;
   text-decoration: none;
 }
+.btn:disabled {
+  background-color: #d0d0d0;
+  box-shadow: unset;
+  text-decoration: none;
+  cursor: default;
+}
+
+.btn-secondary {
+  border: 1px solid #D8D8D8;
+  background-color: #D8D8D8;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 10px 25px;
+}
 
 .btn-flag {
   position: relative;
-  display: inline-block;
   border: unset;
   background-color: #fff;
   padding: 0 45px;
@@ -213,7 +228,7 @@ input {
 }
 
 .carousel__form {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -302,9 +317,6 @@ input {
   }
 }
 @media screen and (max-width: 800px) {
-  .carousel__form {
-    margin-bottom: 40px;
-  }
   .carousel__item {
     height: 300px;
   }
@@ -651,6 +663,46 @@ input {
 
 .wpcf7 form .wpcf7-response-output {
   margin: 0;
+}
+
+.select2-dropdown {
+  border: 1px solid #000;
+  border-radius: 0;
+  top: 30px;
+}
+.select2-dropdown__option {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  padding: 10px 20px;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #000;
+  border-radius: 0;
+  height: 49px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #000 transparent transparent transparent;
+  margin-left: -10px;
+  margin-top: 8px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #000;
+  line-height: 47px;
+  padding: 0 15px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered[title="--"] {
+  display: none;
+}
+
+.select2-container--open.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #000 transparent;
+}
+.select2-container--open.select2-container--above .select2-selection--single {
+  border-top-color: transparent;
+}
+.select2-container--open.select2-container--below .select2-selection--single {
+  border-bottom-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
