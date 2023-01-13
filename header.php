@@ -4,13 +4,13 @@
     <meta charset="<?php bloginfo('charset') ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('title') ?></title>
+    <title><?php is_home() ? bloginfo('title') : the_title() ?></title>
 
     <?php wp_head() ?>
 </head>
 <body id="body" class="body">
     <!-- Header -->
-    <header id="header" class="<?= is_front_page() ? 'header' : 'header header--margin' ?>">
+    <header id="header" class="<?= is_home() ? 'header' : 'header header--margin' ?>">
         <!-- Container -->
         <div class="header__container container">
             <!-- Logo -->
@@ -39,5 +39,5 @@
     <!-- /Header -->
 
     <!-- Main -->
-    <main id="main" class="<?= is_front_page() ? 'main' : 'main container' ?>">
+    <main id="main" class="<?= is_home() ? 'main' : 'main container' ?>">
         
