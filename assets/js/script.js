@@ -69,7 +69,7 @@ jQuery(document).ready(function () {
     Lightbox
 ------------------------------------*/
     // Open
-    jQuery('.js-preview-btn').click(function () {
+    jQuery('body').on('click', '.js-preview-btn', function () {
         jQuery('#lightbox').addClass('show').attr('aria-hidden', false)
 
         const img = jQuery('<img>', { id: 'lightbox-img', src: this.dataset.img })

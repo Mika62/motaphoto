@@ -64,6 +64,6 @@ function add_taxonomies_field_meta($id) {
 
     foreach ($taxonomies as $taxonomy) {
         $terms = get_the_terms($id, $taxonomy);
-        add_post_meta($id, $taxonomy,  $terms[0]->name, true);
+        isset($terms[0]) && add_post_meta($id, $taxonomy,  $terms[0]->name, true);
     }
 }
